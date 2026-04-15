@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA-Tutor | 数据结构与算法可视化教学平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <!-- 顶部标题 -->
+    <header class="page-header">
+        <h1>DSA-Tutor</h1>
+        <p>数据结构与算法可视化教学平台</p>
+    </header>
+    
+    <!-- 主内容区 -->
+    <div class="main-container">
+        <!-- 左侧内容区 -->
+        <main class="content-area">
+            <!-- 标签页切换 -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="graph">知识图谱</button>
+                <button class="tab-btn" data-tab="timeline">进化史</button>
+            </div>
+            
+            <!-- 知识图谱视图 -->
+            <div id="graph-view" class="tab-content active">
+                <div class="graph-container-wrapper">
+                    <div id="graph-container"></div>
+                </div>
+                <div class="graph-hint">
+                    💡 提示：点击节点查看详情，拖拽移动，滚轮缩放
+                </div>
+            </div>
+            
+            <!-- 进化史时间线视图 -->
+            <div id="timeline-view" class="tab-content">
+                <div class="timeline-container">
+                    <h2>📅 算法发展历史</h2>
+                    <div id="timeline-content"></div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- 右侧信息面板 -->
+        <aside class="info-panel">
+            <div class="panel-section">
+                <h3>数据结构</h3>
+                <div class="algo-list">
+                    <div class="algo-item" data-node="array">
+                        <span class="algo-name">数组</span>
+                        <span class="algo-level">Lv1</span>
+                    </div>
+                    <div class="algo-item" data-node="linkedlist">
+                        <span class="algo-name">链表</span>
+                        <span class="algo-level">Lv1</span>
+                    </div>
+                    <div class="algo-item" data-node="stack">
+                        <span class="algo-name">栈</span>
+                        <span class="algo-level">Lv1</span>
+                    </div>
+                    <div class="algo-item" data-node="queue">
+                        <span class="algo-name">队列</span>
+                        <span class="algo-level">Lv1</span>
+                    </div>
+                    <div class="algo-item" data-node="bst">
+                        <span class="algo-name">二叉搜索树</span>
+                        <span class="algo-level">Lv2</span>
+                    </div>
+                    <div class="algo-item" data-node="heap">
+                        <span class="algo-name">堆</span>
+                        <span class="algo-level">Lv2</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel-section">
+                <h3>算法</h3>
+                <div class="algo-list">
+                    <div class="algo-item" data-node="sort">
+                        <span class="algo-name">排序算法</span>
+                        <span class="algo-level">Lv1</span>
+                    </div>
+                    <div class="algo-item" data-node="search">
+                        <span class="algo-name">查找算法</span>
+                        <span class="algo-level">Lv1</span>
+                    </div>
+                    <div class="algo-item" data-node="dp">
+                        <span class="algo-name">动态规划</span>
+                        <span class="algo-level">Lv3</span>
+                    </div>
+                    <div class="algo-item" data-node="greedy">
+                        <span class="algo-name">贪心算法</span>
+                        <span class="algo-level">Lv2</span>
+                    </div>
+                    <div class="algo-item" data-node="backtrack">
+                        <span class="algo-name">回溯算法</span>
+                        <span class="algo-level">Lv2</span>
+                    </div>
+                    <div class="algo-item" data-node="graph">
+                        <span class="algo-name">图算法</span>
+                        <span class="algo-level">Lv3</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AI助手面板 -->
+            <div class="panel-section ai-section">
+                <h3>🤖 AI学习助手</h3>
+                <div class="ai-chat-box">
+                    <div id="chat-messages">
+                        <div class="message ai-message">
+                            <div class="message-content">
+                                你好！我是你的DSA学习助手。点击知识图谱的节点，我可以为你详细讲解！
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chat-input" placeholder="输入问题...">
+                        <button id="send-btn">发送</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- 详情弹窗 -->
+    <div id="detail-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="js/graph-data.js?v=36"></script>
+    <script src="js/history.js?v=36"></script>
+    <script src="js/node-details.js?v=36"></script>
+    <script src="js/graph.js?v=36"></script>
+    <script src="js/timeline.js?v=36"></script>
+    <script src="js/chat.js?v=36"></script>
+    <script src="js/main.js?v=36"></script>
+</body>
+</html>
